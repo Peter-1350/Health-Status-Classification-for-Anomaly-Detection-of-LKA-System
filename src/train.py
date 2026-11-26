@@ -60,6 +60,12 @@ def main():
         print(f"  {name:7s} record macro-F1(OOF)={rec_m['macro_f1']:.3f} "
               f"recall={rec_m['anomaly_recall']:.3f} pr_auc={rec_m['pr_auc']:.3f} "
               f"t={t:.2f} frame_pr_auc={frame_m['pr_auc']:.3f}")
+        if t <= 0.05 or (p_rec >= t).mean() > 0.8:
+            # miscalibrated probabilities push the recall>=0.9 threshold to the grid floor,
+            # which degenerates into "everything is an anomaly"; compare with f1_thresholds.
+            print(f"    shortcut: {name} recall-constrained threshold {t:.2f} predicts "
+                  f"{(p_rec >= t).mean():.0%} of records as anomaly "
+                  f"(F1-optimal t={t_f1:.2f})")
 
     df_sum = pd.DataFrame(summary).sort_values("record_pr_auc", ascending=False)
     df_sum.round(4).to_csv(os.path.join(C.RESULTS, "cv_summary.csv"), index=False)

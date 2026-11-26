@@ -13,6 +13,7 @@ import glob
 import os
 import sys
 import time
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -22,6 +23,7 @@ import common as C
 
 CORR_MAX = 0.95
 NEAR_CONST_FRAC = 0.99
+MAX_MISSING = 0.20
 MAX_CATEGORIES = 10
 ARRAY_ROW_STATS = ("mean", "std", "min", "max", "first", "last")
 
@@ -44,7 +46,12 @@ def schema_from_reference():
 
 
 def array_features(s: pd.Series) -> dict:
-    """Per-row trajectory stats (mean/std/min/max/first/last), then aggregated over the window."""
+    """Per-row trajectory stats (mean/std/min/max/first/last), then aggregated over the window.
+
+    Some rows carry literal `nan` inside the array (e.g. trailing padding of a laneline
+    polynomial), so every reduction below is nan-aware; otherwise one padded row poisons
+    the whole window and the value later gets median-imputed from another record.
+    """
     vecs = []
     for raw in s:
         try:
@@ -53,21 +60,25 @@ def array_features(s: pd.Series) -> dict:
             continue
         if v.size and np.isfinite(v).any():
             vecs.append(v)
-    if len(vecs) < 2:
-        vecs = vecs * 2 if vecs else [np.zeros(1), np.zeros(1)]
+    if not vecs:
+        return {f"__row{n}__{a}": np.nan for n in ARRAY_ROW_STATS for a in ("mean", "std")}
+    if len(vecs) == 1:
+        vecs = vecs * 2
     M = np.vstack(vecs)
-    rows = {
-        "mean": M.mean(axis=1),
-        "std": M.std(axis=1),
-        "min": M.min(axis=1),
-        "max": M.max(axis=1),
-        "first": M[:, 0],
-        "last": M[:, -1],
-    }
-    feats = {}
-    for name, arr in rows.items():
-        feats[f"__row{name}__mean"] = float(np.mean(arr))
-        feats[f"__row{name}__std"] = float(np.std(arr))
+    with warnings.catch_warnings():  # all-NaN slices -> NaN, not a warning storm
+        warnings.simplefilter("ignore", RuntimeWarning)
+        rows = {
+            "mean": np.nanmean(M, axis=1),
+            "std": np.nanstd(M, axis=1),
+            "min": np.nanmin(M, axis=1),
+            "max": np.nanmax(M, axis=1),
+            "first": M[:, 0],
+            "last": M[:, -1],
+        }
+        feats = {}
+        for name, arr in rows.items():
+            feats[f"__row{name}__mean"] = float(np.nanmean(arr))
+            feats[f"__row{name}__std"] = float(np.nanstd(arr))
     return feats
 
 
@@ -88,8 +99,8 @@ def frame_row(path, num, boolean, strings, arrays):
             "max": X.max(),
             "range": X.max() - X.min(),
             "last_first": X.iloc[-1] - X.iloc[0],
-            "meanabsdiff": d.abs().mean(),
-            "stddiff": d.std(ddof=0),
+            "meanabsdiff": d.abs().mean().fillna(0.0),  # a 1-row warmup window has no observed change
+            "stddiff": d.std(ddof=0).fillna(0.0),
         }
         for s, ser in stats.items():
             row.update({f"{c}__{s}": v for c, v in ser.items()})
@@ -164,13 +175,17 @@ def encode_categories(train, test, strings):
 def select_features(train, feats):
     """Drops are fitted on TRAIN only and then applied to both splits."""
     n = len(train)
-    dropped = {"all_nan": [], "constant": [], "near_constant": [], "collinear": []}
+    dropped = {"all_nan": [], "constant": [], "near_constant": [], "mostly_missing": [], "collinear": []}
 
     cand = []
     for c in feats:
         col = train[c]
+        missing = col.isna().mean()
         if col.notna().sum() == 0:
             dropped["all_nan"].append(c)
+        elif missing > MAX_MISSING:
+            # imputing a large share of a column invents values; drop the column instead
+            dropped["mostly_missing"].append(c)
         elif col.std(ddof=0) == 0 or col.nunique(dropna=True) <= 1:
             dropped["constant"].append(c)
         elif col.value_counts(dropna=True).iloc[0] / n > NEAR_CONST_FRAC:
