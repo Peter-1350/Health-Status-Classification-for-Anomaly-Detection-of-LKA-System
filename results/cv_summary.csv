@@ -1,0 +1,5 @@
+model,threshold,record_n,record_n_pos,record_threshold,record_accuracy,record_macro_f1,record_anomaly_recall,record_anomaly_precision,record_tn_fp_fn_tp,record_pr_auc,record_roc_auc,frame_pr_auc,frame_macro_f1,frame_accuracy,cv_record_macro_f1_mean,cv_record_macro_f1_std,cv_record_recall_mean
+logreg,0.14,172,75,0.14,0.7442,0.7436,0.9067,0.6476,"[60, 37, 7, 68]",0.8778,0.8807,0.7904,0.7849,0.785,0.7926,0.0484,0.7629
+xgb,0.05,172,75,0.05,0.7326,0.7317,0.9067,0.6355,"[58, 39, 7, 68]",0.8769,0.8759,0.8554,0.7476,0.748,0.8022,0.0429,0.7469
+rf,0.24,172,75,0.24,0.6744,0.67,0.9067,0.5812,"[48, 49, 7, 68]",0.8443,0.854,0.8355,0.6824,0.6878,0.7614,0.0858,0.7338
+tree,0.47,172,75,0.47,0.7907,0.7865,0.7467,0.7671,"[80, 17, 19, 56]",0.7478,0.7962,0.6976,0.7157,0.7202,0.7843,0.0793,0.7363

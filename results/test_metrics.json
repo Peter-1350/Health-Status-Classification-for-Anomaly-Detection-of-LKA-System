@@ -1,0 +1,228 @@
+{
+  "best_model": "logreg",
+  "thresholds": {
+    "logreg": 0.14,
+    "tree": 0.47000000000000003,
+    "rf": 0.24000000000000002,
+    "xgb": 0.05
+  },
+  "n_test_records": 41,
+  "n_test_records_scored": 40,
+  "no_data_records": [
+    "record177"
+  ],
+  "metrics": {
+    "logreg": {
+      "record": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.14,
+        "accuracy": 0.6,
+        "macro_f1": 0.5604395604395604,
+        "anomaly_recall": 0.8571428571428571,
+        "anomaly_precision": 0.2857142857142857,
+        "tn_fp_fn_tp": [
+          18,
+          15,
+          1,
+          6
+        ],
+        "pr_auc": 0.5463492063492064,
+        "roc_auc": 0.8354978354978355
+      },
+      "record_f1opt": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.44,
+        "accuracy": 0.725,
+        "macro_f1": 0.6643783371472158,
+        "anomaly_recall": 0.8571428571428571,
+        "anomaly_precision": 0.375,
+        "tn_fp_fn_tp": [
+          23,
+          10,
+          1,
+          6
+        ],
+        "pr_auc": 0.5463492063492064,
+        "roc_auc": 0.8354978354978355
+      },
+      "frame": {
+        "n": 473,
+        "n_pos": 90,
+        "threshold": 0.14,
+        "accuracy": 0.6617336152219874,
+        "macro_f1": 0.6255689689293489,
+        "anomaly_recall": 0.9222222222222223,
+        "anomaly_precision": 0.3516949152542373,
+        "tn_fp_fn_tp": [
+          230,
+          153,
+          7,
+          83
+        ],
+        "pr_auc": 0.3835175213552155,
+        "roc_auc": 0.8076878445024659
+      }
+    },
+    "tree": {
+      "record": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.47000000000000003,
+        "accuracy": 0.725,
+        "macro_f1": 0.6203623813632442,
+        "anomaly_recall": 0.5714285714285714,
+        "anomaly_precision": 0.3333333333333333,
+        "tn_fp_fn_tp": [
+          25,
+          8,
+          3,
+          4
+        ],
+        "pr_auc": 0.3187978687978688,
+        "roc_auc": 0.683982683982684
+      },
+      "record_f1opt": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.47000000000000003,
+        "accuracy": 0.725,
+        "macro_f1": 0.6203623813632442,
+        "anomaly_recall": 0.5714285714285714,
+        "anomaly_precision": 0.3333333333333333,
+        "tn_fp_fn_tp": [
+          25,
+          8,
+          3,
+          4
+        ],
+        "pr_auc": 0.3187978687978688,
+        "roc_auc": 0.683982683982684
+      },
+      "frame": {
+        "n": 473,
+        "n_pos": 90,
+        "threshold": 0.47000000000000003,
+        "accuracy": 0.7315010570824524,
+        "macro_f1": 0.6177838577291381,
+        "anomaly_recall": 0.4888888888888889,
+        "anomaly_precision": 0.352,
+        "tn_fp_fn_tp": [
+          302,
+          81,
+          46,
+          44
+        ],
+        "pr_auc": 0.2827817901006211,
+        "roc_auc": 0.6603133159268929
+      }
+    },
+    "rf": {
+      "record": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.24000000000000002,
+        "accuracy": 0.4,
+        "macro_f1": 0.39849624060150374,
+        "anomaly_recall": 1.0,
+        "anomaly_precision": 0.22580645161290322,
+        "tn_fp_fn_tp": [
+          9,
+          24,
+          0,
+          7
+        ],
+        "pr_auc": 0.8513867085295657,
+        "roc_auc": 0.9090909090909092
+      },
+      "record_f1opt": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.55,
+        "accuracy": 0.925,
+        "macro_f1": 0.841897233201581,
+        "anomaly_recall": 0.5714285714285714,
+        "anomaly_precision": 1.0,
+        "tn_fp_fn_tp": [
+          33,
+          0,
+          3,
+          4
+        ],
+        "pr_auc": 0.8513867085295657,
+        "roc_auc": 0.9090909090909092
+      },
+      "frame": {
+        "n": 473,
+        "n_pos": 90,
+        "threshold": 0.24000000000000002,
+        "accuracy": 0.3953488372093023,
+        "macro_f1": 0.3952163805436337,
+        "anomaly_recall": 1.0,
+        "anomaly_precision": 0.2393617021276596,
+        "tn_fp_fn_tp": [
+          97,
+          286,
+          0,
+          90
+        ],
+        "pr_auc": 0.8154443715519772,
+        "roc_auc": 0.9140411952422396
+      }
+    },
+    "xgb": {
+      "record": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.05,
+        "accuracy": 0.6,
+        "macro_f1": 0.5733333333333334,
+        "anomaly_recall": 1.0,
+        "anomaly_precision": 0.30434782608695654,
+        "tn_fp_fn_tp": [
+          17,
+          16,
+          0,
+          7
+        ],
+        "pr_auc": 1.0,
+        "roc_auc": 1.0
+      },
+      "record_f1opt": {
+        "n": 40,
+        "n_pos": 7,
+        "threshold": 0.49,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "anomaly_recall": 1.0,
+        "anomaly_precision": 1.0,
+        "tn_fp_fn_tp": [
+          33,
+          0,
+          0,
+          7
+        ],
+        "pr_auc": 1.0,
+        "roc_auc": 1.0
+      },
+      "frame": {
+        "n": 473,
+        "n_pos": 90,
+        "threshold": 0.05,
+        "accuracy": 0.6744186046511628,
+        "macro_f1": 0.642665123032848,
+        "anomaly_recall": 0.9888888888888889,
+        "anomaly_precision": 0.3677685950413223,
+        "tn_fp_fn_tp": [
+          230,
+          153,
+          1,
+          89
+        ],
+        "pr_auc": 0.9630907293519689,
+        "roc_auc": 0.9850594720046417
+      }
+    }
+  }
+}

@@ -1,0 +1,2198 @@
+{
+  "label_mode": "record",
+  "lka_thresh": 0.25,
+  "n_splits": 5,
+  "raw_columns": {
+    "num": [
+      "acc_set_speed",
+      "act_ctrl_gas",
+      "act_ctrl_brake",
+      "act_ctrl_accel",
+      "body_pitch_angle",
+      "body_roll_angle",
+      "body_yaw_angle",
+      "body_roll",
+      "aEgo",
+      "vEgo",
+      "vLead1",
+      "vLead2",
+      "lead1_spacing",
+      "lead2_spacing",
+      "vision_vLead",
+      "vision_dist",
+      "vTarget",
+      "uPAccelCmd",
+      "uIAccelCmd",
+      "uFAccelCmd",
+      "aTarget",
+      "state_gas_pos",
+      "op_curvature_desired",
+      "op_curvature_actual",
+      "op_ll_left_prob",
+      "op_ll_right_prob",
+      "op_lane_left_prob",
+      "op_lane_right_prob",
+      "op_state_steer_torque",
+      "op_state_steer_angle",
+      "dir_torque_actual",
+      "dir_torque_request",
+      "dir_rpm",
+      "di_accel_pedal_pos",
+      "bms_volt",
+      "bms_current",
+      "esp_break_torque_request",
+      "energy_total_charge",
+      "energy_total_discharge",
+      "stock_vTarget",
+      "stock_jerkMin",
+      "stock_jerkMax",
+      "stock_accelMin",
+      "stock_accelMax",
+      "rcm_pitch_rate",
+      "rcm_roll_rate",
+      "rcm_yaw_rate",
+      "rcm_lateral_accel",
+      "rcm_longitudinal_accel"
+    ],
+    "bool": [
+      "op_enable",
+      "op_long_enable",
+      "op_lat_enable",
+      "acc_enable",
+      "has_lead",
+      "state_gas_pressed",
+      "state_regen_break_enable",
+      "op_lanes_visible",
+      "op_lane_left_visible",
+      "op_lane_right_visible",
+      "op_lane_left_depart",
+      "op_lane_right_depart"
+    ],
+    "str": [
+      "long_plan_source",
+      "op_lane_change_state",
+      "stock_acc",
+      "ui_road_class",
+      "das_autopilot_state"
+    ],
+    "array": [
+      "plan_accel",
+      "op_laneline_t",
+      "op_left_roadedge",
+      "op_right_roadedge",
+      "e2e_position_t",
+      "e2e_position_x",
+      "e2e_position_y",
+      "e2e_position_z"
+    ]
+  },
+  "leak_cols_removed": [
+    "LKA_error",
+    "op_left_laneline",
+    "op_right_laneline"
+  ],
+  "time_cols_removed": [
+    "Time",
+    "Time.1",
+    "unix_time",
+    "can_mono_time",
+    "wallTimeCentiseconds",
+    "easternTime"
+  ],
+  "categorical_columns": {
+    "long_plan_source": [
+      "cruise",
+      "lead0",
+      "lead1"
+    ],
+    "op_lane_change_state": [
+      "off",
+      "laneChangeStarting",
+      "preLaneChange",
+      "laneChangeFinishing"
+    ],
+    "stock_acc": [
+      "ACC_ON",
+      "ACC_CANCEL_GENERIC"
+    ],
+    "ui_road_class": [
+      "CLASS_1_MAJOR",
+      "CLASS_4",
+      "CLASS_6_MINOR",
+      "CLASS_3",
+      "CLASS_5"
+    ],
+    "das_autopilot_state": [
+      "DISABLED"
+    ]
+  },
+  "n_features_built": 521,
+  "n_features_selected": 274,
+  "selected_features": [
+    "dir_torque_actual__min",
+    "dir_torque_actual__range",
+    "dir_torque_actual__last_first",
+    "dir_torque_actual__max",
+    "dir_torque_actual__mean",
+    "dir_rpm__min",
+    "bms_current__max",
+    "bms_current__range",
+    "bms_current__last_first",
+    "bms_current__min",
+    "dir_rpm__last_first",
+    "vision_vLead__max",
+    "energy_total_charge__min",
+    "bms_current__mean",
+    "dir_rpm__range",
+    "energy_total_charge__mean",
+    "esp_break_torque_request__max",
+    "energy_total_charge__max",
+    "op_state_steer_angle__range",
+    "op_state_steer_angle__last_first",
+    "op_state_steer_angle__max",
+    "energy_total_charge__range",
+    "esp_break_torque_request__mean",
+    "esp_break_torque_request__range",
+    "lead1_spacing__max",
+    "esp_break_torque_request__min",
+    "esp_break_torque_request__last_first",
+    "op_state_steer_angle__mean",
+    "op_state_steer_angle__min",
+    "lead1_spacing__mean",
+    "energy_total_charge__last_first",
+    "lead1_spacing__min",
+    "lead1_spacing__range",
+    "vision_vLead__range",
+    "lead2_spacing__range",
+    "op_right_roadedge__rowlast__mean",
+    "vision_vLead__last_first",
+    "e2e_position_y__rowlast__mean",
+    "op_right_roadedge__rowmin__mean",
+    "lead1_spacing__last_first",
+    "vLead2__max",
+    "lead2_spacing__last_first",
+    "vLead2__min",
+    "esp_break_torque_request__std",
+    "dir_rpm__std",
+    "di_accel_pedal_pos__max",
+    "e2e_position_y__rowmin__mean",
+    "dir_torque_actual__stddiff",
+    "stock_vTarget__last_first",
+    "di_accel_pedal_pos__mean",
+    "stock_vTarget__range",
+    "di_accel_pedal_pos__min",
+    "op_left_roadedge__rowmax__mean",
+    "e2e_position_y__rowmax__mean",
+    "di_accel_pedal_pos__last_first",
+    "di_accel_pedal_pos__range",
+    "e2e_position_x__rowlast__std",
+    "lead2_spacing__std",
+    "lead1_spacing__std",
+    "op_right_roadedge__rowlast__std",
+    "op_right_roadedge__rowstd__mean",
+    "op_right_roadedge__rowmin__std",
+    "vLead1__range",
+    "vLead2__range",
+    "e2e_position_y__rowstd__mean",
+    "e2e_position_y__rowlast__std",
+    "dir_torque_request__stddiff",
+    "bms_volt__min",
+    "bms_volt__max",
+    "vLead1__last_first",
+    "vLead2__last_first",
+    "e2e_position_y__rowmin__std",
+    "bms_volt__mean",
+    "op_right_roadedge__rowmax__std",
+    "stock_jerkMin__min",
+    "stock_jerkMax__range",
+    "dir_rpm__stddiff",
+    "vision_dist__range",
+    "e2e_position_z__rowlast__mean",
+    "stock_vTarget__std",
+    "vision_dist__last_first",
+    "dir_torque_request__meanabsdiff",
+    "e2e_position_y__rowmax__std",
+    "vEgo__last_first",
+    "e2e_position_z__rowmin__mean",
+    "vLead2__std",
+    "body_yaw_angle__min",
+    "body_yaw_angle__max",
+    "bms_current__stddiff",
+    "vLead1__std",
+    "esp_break_torque_request__stddiff",
+    "stock_jerkMax__last_first",
+    "stock_jerkMin__last_first",
+    "lead2_spacing__stddiff",
+    "duration",
+    "e2e_position_z__rowmax__mean",
+    "op_laneline_t__rowlast__mean",
+    "stock_jerkMin__mean",
+    "lead1_spacing__stddiff",
+    "stock_jerkMax__mean",
+    "op_state_steer_torque__range",
+    "aEgo__range",
+    "body_yaw_angle__range",
+    "op_state_steer_torque__last_first",
+    "op_state_steer_torque__max",
+    "aEgo__min",
+    "aEgo__last_first",
+    "op_right_roadedge__rowfirst__mean",
+    "op_state_steer_torque__min",
+    "body_yaw_angle__last_first",
+    "plan_accel__rowlast__mean",
+    "stock_vTarget__stddiff",
+    "aEgo__max",
+    "stock_jerkMax__std",
+    "op_state_steer_torque__mean",
+    "stock_jerkMin__std",
+    "stock_accelMin__range",
+    "stock_jerkMax__stddiff",
+    "aEgo__mean",
+    "stock_jerkMax__min",
+    "stock_accelMin__last_first",
+    "stock_jerkMin__max",
+    "stock_jerkMin__stddiff",
+    "stock_accelMax__range",
+    "stock_accelMax__min",
+    "vision_vLead__stddiff",
+    "stock_accelMin__min",
+    "plan_accel__rowmax__mean",
+    "stock_accelMax__max",
+    "e2e_position_z__rowstd__mean",
+    "dir_rpm__meanabsdiff",
+    "plan_accel__rowmin__mean",
+    "plan_accel__rowmean__mean",
+    "stock_accelMin__max",
+    "stock_accelMax__last_first",
+    "energy_total_charge__meanabsdiff",
+    "ui_road_class_CLASS_1_MAJOR",
+    "stock_accelMax__mean",
+    "acc_enable__frac",
+    "long_plan_source_cruise",
+    "state_gas_pressed__frac",
+    "has_lead__frac",
+    "op_left_roadedge__rowfirst__mean",
+    "stock_accelMin__mean",
+    "rcm_lateral_accel__range",
+    "e2e_position_x__rowmin__mean",
+    "ui_road_class_CLASS_4",
+    "rcm_lateral_accel__max",
+    "op_ll_left_prob__max",
+    "op_ll_left_prob__min",
+    "e2e_position_z__rowlast__std",
+    "ui_road_class_CLASS_6_MINOR",
+    "rcm_lateral_accel__last_first",
+    "stock_jerkMax__meanabsdiff",
+    "op_ll_right_prob__max",
+    "rcm_lateral_accel__min",
+    "stock_acc_ACC_ON",
+    "op_lane_right_prob__min",
+    "stock_jerkMin__meanabsdiff",
+    "ui_road_class_CLASS_3",
+    "op_ll_right_prob__min",
+    "op_lane_left_prob__min",
+    "rcm_lateral_accel__mean",
+    "e2e_position_z__rowmin__std",
+    "vLead2__stddiff",
+    "op_lane_right_prob__mean",
+    "e2e_position_z__rowmax__std",
+    "vLead1__stddiff",
+    "op_lane_left_prob__mean",
+    "aEgo__std",
+    "op_lane_change_state_off",
+    "rcm_longitudinal_accel__std",
+    "ui_road_class_CLASS_5",
+    "op_lat_enable__frac",
+    "body_yaw_angle__stddiff",
+    "stock_accelMin__std",
+    "op_lane_right_prob__max",
+    "op_lane_right_prob__range",
+    "op_lane_left_prob__max",
+    "stock_accelMax__std",
+    "op_lane_change_state_laneChangeStarting",
+    "e2e_position_x__rowmin__std",
+    "op_ll_left_prob__range",
+    "plan_accel__rowfirst__std",
+    "op_lane_right_prob__last_first",
+    "op_lane_left_prob__range",
+    "plan_accel__rowstd__mean",
+    "op_ll_right_prob__range",
+    "op_ll_left_prob__last_first",
+    "op_lane_left_prob__last_first",
+    "plan_accel__rowmin__std",
+    "op_ll_right_prob__last_first",
+    "op_state_steer_angle__stddiff",
+    "esp_break_torque_request__meanabsdiff",
+    "plan_accel__rowmax__std",
+    "op_lane_change_state_preLaneChange",
+    "e2e_position_y__rowfirst__mean",
+    "di_accel_pedal_pos__stddiff",
+    "plan_accel__rowlast__std",
+    "op_left_roadedge__rowfirst__std",
+    "plan_accel__rowmean__std",
+    "op_right_roadedge__rowfirst__std",
+    "stock_accelMin__stddiff",
+    "stock_accelMax__stddiff",
+    "e2e_position_z__rowstd__std",
+    "stock_vTarget__meanabsdiff",
+    "vision_dist__stddiff",
+    "plan_accel__rowstd__std",
+    "rcm_yaw_rate__max",
+    "rcm_yaw_rate__range",
+    "rcm_yaw_rate__last_first",
+    "op_curvature_desired__min",
+    "op_laneline_t__rowlast__std",
+    "op_curvature_desired__range",
+    "e2e_position_y__rowfirst__std",
+    "op_curvature_desired__mean",
+    "rcm_yaw_rate__mean",
+    "op_curvature_desired__max",
+    "di_accel_pedal_pos__meanabsdiff",
+    "stock_accelMin__meanabsdiff",
+    "rcm_pitch_rate__range",
+    "rcm_roll_rate__range",
+    "op_state_steer_torque__stddiff",
+    "rcm_yaw_rate__min",
+    "stock_accelMax__meanabsdiff",
+    "bms_volt__stddiff",
+    "op_curvature_desired__last_first",
+    "aEgo__stddiff",
+    "body_roll_angle__min",
+    "body_roll_angle__max",
+    "aEgo__meanabsdiff",
+    "rcm_roll_rate__max",
+    "bms_volt__meanabsdiff",
+    "rcm_pitch_rate__min",
+    "rcm_roll_rate__min",
+    "rcm_longitudinal_accel__stddiff",
+    "rcm_roll_rate__last_first",
+    "rcm_lateral_accel__stddiff",
+    "rcm_pitch_rate__last_first",
+    "body_pitch_angle__min",
+    "body_pitch_angle__max",
+    "body_roll_angle__last_first",
+    "body_roll__last_first",
+    "body_roll_angle__range",
+    "body_roll__range",
+    "body_pitch_angle__last_first",
+    "body_pitch_angle__range",
+    "rcm_roll_rate__mean",
+    "vEgo__meanabsdiff",
+    "op_lane_right_prob__stddiff",
+    "op_ll_right_prob__stddiff",
+    "op_lane_left_prob__stddiff",
+    "op_ll_left_prob__stddiff",
+    "rcm_pitch_rate__mean",
+    "vEgo__stddiff",
+    "op_laneline_t__rowmin__std",
+    "op_lane_left_prob__meanabsdiff",
+    "op_laneline_t__rowmin__mean",
+    "rcm_roll_rate__stddiff",
+    "op_curvature_desired__stddiff",
+    "e2e_position_z__rowfirst__mean",
+    "state_gas_pos__stddiff",
+    "rcm_pitch_rate__stddiff",
+    "body_pitch_angle__stddiff",
+    "e2e_position_z__rowfirst__std",
+    "rcm_yaw_rate__stddiff",
+    "rcm_yaw_rate__meanabsdiff",
+    "body_roll_angle__stddiff",
+    "body_roll__stddiff",
+    "body_roll__meanabsdiff",
+    "uFAccelCmd__stddiff",
+    "e2e_position_t__rowmean__mean",
+    "e2e_position_t__rowstd__mean",
+    "e2e_position_t__rowstd__std"
+  ],
+  "dropped": {
+    "all_nan": {
+      "n": 0,
+      "cols": []
+    },
+    "constant": {
+      "n": 73,
+      "cols": [
+        "act_ctrl_gas__mean",
+        "act_ctrl_brake__mean",
+        "vTarget__mean",
+        "uPAccelCmd__mean",
+        "uIAccelCmd__mean",
+        "aTarget__mean",
+        "act_ctrl_gas__std",
+        "act_ctrl_brake__std",
+        "vTarget__std",
+        "uPAccelCmd__std",
+        "uIAccelCmd__std",
+        "aTarget__std",
+        "act_ctrl_gas__min",
+        "act_ctrl_brake__min",
+        "vTarget__min",
+        "uPAccelCmd__min",
+        "uIAccelCmd__min",
+        "aTarget__min",
+        "act_ctrl_gas__max",
+        "act_ctrl_brake__max",
+        "vTarget__max",
+        "uPAccelCmd__max",
+        "uIAccelCmd__max",
+        "aTarget__max",
+        "acc_set_speed__range",
+        "act_ctrl_gas__range",
+        "act_ctrl_brake__range",
+        "vTarget__range",
+        "uPAccelCmd__range",
+        "uIAccelCmd__range",
+        "aTarget__range",
+        "acc_set_speed__last_first",
+        "act_ctrl_gas__last_first",
+        "act_ctrl_brake__last_first",
+        "vTarget__last_first",
+        "uPAccelCmd__last_first",
+        "uIAccelCmd__last_first",
+        "aTarget__last_first",
+        "acc_set_speed__meanabsdiff",
+        "act_ctrl_gas__meanabsdiff",
+        "act_ctrl_brake__meanabsdiff",
+        "vTarget__meanabsdiff",
+        "uPAccelCmd__meanabsdiff",
+        "uIAccelCmd__meanabsdiff",
+        "aTarget__meanabsdiff",
+        "acc_set_speed__stddiff",
+        "act_ctrl_gas__stddiff",
+        "act_ctrl_brake__stddiff",
+        "vTarget__stddiff",
+        "uPAccelCmd__stddiff",
+        "uIAccelCmd__stddiff",
+        "aTarget__stddiff",
+        "state_regen_break_enable__frac",
+        "op_lane_left_visible__frac",
+        "op_lane_right_visible__frac",
+        "op_lane_left_depart__frac",
+        "op_lane_right_depart__frac",
+        "op_laneline_t__rowfirst__mean",
+        "op_laneline_t__rowfirst__std",
+        "e2e_position_t__rowmin__mean",
+        "e2e_position_t__rowmin__std",
+        "e2e_position_t__rowmax__mean",
+        "e2e_position_t__rowmax__std",
+        "e2e_position_t__rowfirst__mean",
+        "e2e_position_t__rowfirst__std",
+        "e2e_position_t__rowlast__mean",
+        "e2e_position_t__rowlast__std",
+        "long_plan_source_other",
+        "op_lane_change_state_other",
+        "stock_acc_other",
+        "ui_road_class_other",
+        "das_autopilot_state_DISABLED",
+        "das_autopilot_state_other"
+      ]
+    },
+    "near_constant": {
+      "n": 21,
+      "cols": [
+        "acc_set_speed__mean",
+        "act_ctrl_accel__mean",
+        "uFAccelCmd__mean",
+        "acc_set_speed__std",
+        "act_ctrl_accel__std",
+        "uFAccelCmd__std",
+        "acc_set_speed__min",
+        "act_ctrl_accel__min",
+        "uFAccelCmd__min",
+        "acc_set_speed__max",
+        "act_ctrl_accel__max",
+        "uFAccelCmd__max",
+        "act_ctrl_accel__range",
+        "uFAccelCmd__range",
+        "act_ctrl_accel__last_first",
+        "uFAccelCmd__last_first",
+        "op_enable__frac",
+        "op_long_enable__frac",
+        "op_lanes_visible__frac",
+        "long_plan_source_lead1",
+        "op_lane_change_state_laneChangeFinishing"
+      ]
+    },
+    "collinear": {
+      "n": 153,
+      "cols": [
+        "dir_torque_request__min",
+        "dir_torque_request__last_first",
+        "dir_torque_request__range",
+        "dir_torque_request__max",
+        "dir_torque_request__mean",
+        "dir_rpm__mean",
+        "dir_rpm__max",
+        "dir_torque_actual__std",
+        "dir_torque_request__std",
+        "e2e_position_x__rowlast__mean",
+        "e2e_position_x__rowmax__mean",
+        "vision_vLead__mean",
+        "energy_total_discharge__min",
+        "vision_vLead__min",
+        "energy_total_discharge__mean",
+        "stock_vTarget__min",
+        "energy_total_discharge__max",
+        "stock_vTarget__mean",
+        "stock_vTarget__max",
+        "e2e_position_x__rowmean__mean",
+        "energy_total_discharge__range",
+        "e2e_position_x__rowstd__mean",
+        "lead2_spacing__max",
+        "lead2_spacing__mean",
+        "lead2_spacing__min",
+        "energy_total_discharge__last_first",
+        "bms_current__std",
+        "op_left_roadedge__rowlast__mean",
+        "op_left_roadedge__rowmin__mean",
+        "op_state_steer_angle__std",
+        "vLead1__max",
+        "vLead2__mean",
+        "vLead1__mean",
+        "vLead1__min",
+        "energy_total_charge__std",
+        "vEgo__min",
+        "vEgo__mean",
+        "vEgo__max",
+        "energy_total_discharge__std",
+        "vision_dist__min",
+        "vision_dist__mean",
+        "vision_dist__max",
+        "op_right_roadedge__rowmax__mean",
+        "dir_torque_actual__meanabsdiff",
+        "e2e_position_x__rowmax__std",
+        "op_left_roadedge__rowlast__std",
+        "vision_vLead__std",
+        "op_left_roadedge__rowstd__mean",
+        "op_left_roadedge__rowmin__std",
+        "op_right_roadedge__rowmean__mean",
+        "op_left_roadedge__rowmean__mean",
+        "e2e_position_y__rowmean__mean",
+        "energy_total_charge__stddiff",
+        "op_left_roadedge__rowmax__std",
+        "stock_jerkMin__range",
+        "bms_volt__last_first",
+        "stock_jerkMax__max",
+        "bms_volt__range",
+        "energy_total_discharge__stddiff",
+        "di_accel_pedal_pos__std",
+        "e2e_position_x__rowstd__std",
+        "op_right_roadedge__rowmean__std",
+        "op_left_roadedge__rowmean__std",
+        "e2e_position_x__rowmean__std",
+        "op_right_roadedge__rowstd__std",
+        "op_left_roadedge__rowstd__std",
+        "body_yaw_angle__mean",
+        "vEgo__range",
+        "e2e_position_y__rowstd__std",
+        "op_laneline_t__rowmax__mean",
+        "bms_volt__std",
+        "e2e_position_y__rowmean__std",
+        "bms_current__meanabsdiff",
+        "rcm_longitudinal_accel__min",
+        "rcm_longitudinal_accel__range",
+        "rcm_longitudinal_accel__last_first",
+        "rcm_longitudinal_accel__mean",
+        "rcm_longitudinal_accel__max",
+        "vision_dist__std",
+        "lead2_spacing__meanabsdiff",
+        "e2e_position_z__rowmean__mean",
+        "long_plan_source_lead0",
+        "plan_accel__rowfirst__mean",
+        "energy_total_discharge__meanabsdiff",
+        "vEgo__std",
+        "e2e_position_x__rowfirst__mean",
+        "lead1_spacing__meanabsdiff",
+        "op_ll_left_prob__mean",
+        "op_laneline_t__rowmean__mean",
+        "stock_acc_ACC_CANCEL_GENERIC",
+        "body_yaw_angle__std",
+        "vision_vLead__meanabsdiff",
+        "op_ll_right_prob__mean",
+        "op_laneline_t__rowstd__mean",
+        "op_state_steer_torque__std",
+        "e2e_position_x__rowfirst__std",
+        "op_state_steer_angle__meanabsdiff",
+        "vLead2__meanabsdiff",
+        "state_gas_pos__max",
+        "body_yaw_angle__meanabsdiff",
+        "rcm_lateral_accel__std",
+        "state_gas_pos__mean",
+        "vLead1__meanabsdiff",
+        "state_gas_pos__min",
+        "e2e_position_z__rowmean__std",
+        "state_gas_pos__last_first",
+        "state_gas_pos__range",
+        "op_lane_right_prob__std",
+        "op_lane_left_prob__std",
+        "op_ll_left_prob__std",
+        "op_ll_right_prob__std",
+        "op_laneline_t__rowmax__std",
+        "vision_dist__meanabsdiff",
+        "state_gas_pos__std",
+        "body_roll__min",
+        "body_roll_angle__mean",
+        "body_roll__mean",
+        "op_state_steer_torque__meanabsdiff",
+        "body_roll__max",
+        "op_curvature_actual__range",
+        "op_curvature_actual__last_first",
+        "rcm_pitch_rate__max",
+        "op_curvature_actual__min",
+        "rcm_yaw_rate__std",
+        "op_laneline_t__rowmean__std",
+        "op_curvature_actual__mean",
+        "op_curvature_actual__max",
+        "rcm_longitudinal_accel__meanabsdiff",
+        "op_curvature_desired__std",
+        "body_pitch_angle__mean",
+        "op_laneline_t__rowstd__std",
+        "rcm_lateral_accel__meanabsdiff",
+        "rcm_roll_rate__std",
+        "op_curvature_actual__std",
+        "rcm_pitch_rate__std",
+        "op_ll_right_prob__meanabsdiff",
+        "op_lane_right_prob__meanabsdiff",
+        "body_roll_angle__std",
+        "body_roll__std",
+        "op_ll_left_prob__meanabsdiff",
+        "body_pitch_angle__std",
+        "rcm_roll_rate__meanabsdiff",
+        "rcm_pitch_rate__meanabsdiff",
+        "op_curvature_desired__meanabsdiff",
+        "state_gas_pos__meanabsdiff",
+        "body_pitch_angle__meanabsdiff",
+        "op_curvature_actual__meanabsdiff",
+        "op_curvature_actual__stddiff",
+        "body_roll_angle__meanabsdiff",
+        "act_ctrl_accel__stddiff",
+        "act_ctrl_accel__meanabsdiff",
+        "uFAccelCmd__meanabsdiff",
+        "e2e_position_t__rowmean__std"
+      ]
+    }
+  },
+  "train": {
+    "records": 173,
+    "records_used": 172,
+    "frames": 2409,
+    "anomaly_frames": 1073,
+    "empty_records": [
+      "record100"
+    ]
+  },
+  "test": {
+    "records": 41,
+    "records_used": 40,
+    "frames": 473,
+    "anomaly_frames": 90,
+    "empty_records": [
+      "record177"
+    ]
+  },
+  "records": {
+    "Train": [
+      {
+        "record_id": "record1",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.014754609591648708,
+        "lka_pooled": 0.02109763467569713
+      },
+      {
+        "record_id": "record2",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.1807362559494296,
+        "lka_pooled": 0.15761940168009864
+      },
+      {
+        "record_id": "record3",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.12868767715875917,
+        "lka_pooled": 0.12394096553325648
+      },
+      {
+        "record_id": "record4",
+        "n_frames": 4,
+        "label": 1,
+        "lka_mean": 0.290269161661466,
+        "lka_pooled": 0.2648503862486945
+      },
+      {
+        "record_id": "record5",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.08289375318739806,
+        "lka_pooled": 0.08289298889236532
+      },
+      {
+        "record_id": "record6",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.44357834874164487,
+        "lka_pooled": -0.3764795575957549
+      },
+      {
+        "record_id": "record7",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.00641993314027786,
+        "lka_pooled": 0.000411980716805709
+      },
+      {
+        "record_id": "record8",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.15033352542519576,
+        "lka_pooled": 0.15767920044710004
+      },
+      {
+        "record_id": "record9",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.16249809589624084,
+        "lka_pooled": 0.1618158002937012
+      },
+      {
+        "record_id": "record10",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.03804669593724764,
+        "lka_pooled": 0.03815302564450632
+      },
+      {
+        "record_id": "record11",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4086423452120263,
+        "lka_pooled": 0.34906732025899384
+      },
+      {
+        "record_id": "record12",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.17569486263033868,
+        "lka_pooled": 0.12698067363939788
+      },
+      {
+        "record_id": "record13",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": -0.10377246812127013,
+        "lka_pooled": -0.15510724975011958
+      },
+      {
+        "record_id": "record14",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.05791397786714898,
+        "lka_pooled": 0.05219820280869799
+      },
+      {
+        "record_id": "record15",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.425472688183061,
+        "lka_pooled": 0.42040657965727424
+      },
+      {
+        "record_id": "record16",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.0598295590932723,
+        "lka_pooled": -0.05617998244258504
+      },
+      {
+        "record_id": "record17",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.126036279971929,
+        "lka_pooled": 0.15158503024201644
+      },
+      {
+        "record_id": "record18",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.08295730365025658,
+        "lka_pooled": 0.08216473085596508
+      },
+      {
+        "record_id": "record19",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.48319711918875,
+        "lka_pooled": 0.44241169950563447
+      },
+      {
+        "record_id": "record20",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.2503939749922748,
+        "lka_pooled": 0.31627063914349207
+      },
+      {
+        "record_id": "record21",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.10975573372907867,
+        "lka_pooled": 0.11340350031985322
+      },
+      {
+        "record_id": "record22",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.16087136410362582,
+        "lka_pooled": 0.14506812629925922
+      },
+      {
+        "record_id": "record23",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.43849170731812703,
+        "lka_pooled": 0.336713427730969
+      },
+      {
+        "record_id": "record24",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3282801878177693,
+        "lka_pooled": 0.2554057527215857
+      },
+      {
+        "record_id": "record25",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.2797047013211623,
+        "lka_pooled": 0.2573536198139191
+      },
+      {
+        "record_id": "record26",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.15631519894680884,
+        "lka_pooled": 0.15524606269598007
+      },
+      {
+        "record_id": "record27",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.12151230714065901,
+        "lka_pooled": -0.29560558856278657
+      },
+      {
+        "record_id": "record28",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.07654088577235141,
+        "lka_pooled": 0.07445456624031063
+      },
+      {
+        "record_id": "record29",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.15595467110924918,
+        "lka_pooled": -0.058754991136099166
+      },
+      {
+        "record_id": "record30",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.22816886554262578,
+        "lka_pooled": 0.225727850136004
+      },
+      {
+        "record_id": "record31",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.03371628099254199,
+        "lka_pooled": 0.035827355227972334
+      },
+      {
+        "record_id": "record32",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3835153200412109,
+        "lka_pooled": 0.42074691389736374
+      },
+      {
+        "record_id": "record33",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4396760999683784,
+        "lka_pooled": 0.4729869257348606
+      },
+      {
+        "record_id": "record34",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.051406681537628084,
+        "lka_pooled": -0.0514066815376281
+      },
+      {
+        "record_id": "record35",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.49147754647563796,
+        "lka_pooled": 0.427536485949776
+      },
+      {
+        "record_id": "record36",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.07973668535424851,
+        "lka_pooled": 0.08689221969017616
+      },
+      {
+        "record_id": "record37",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3465015192604712,
+        "lka_pooled": 0.3713396312061109
+      },
+      {
+        "record_id": "record38",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4848163417653482,
+        "lka_pooled": 0.47058151192313075
+      },
+      {
+        "record_id": "record39",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4348734617233276,
+        "lka_pooled": 0.4348734617233276
+      },
+      {
+        "record_id": "record40",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.2070532441139221,
+        "lka_pooled": 0.2070532441139221
+      },
+      {
+        "record_id": "record41",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3168525475227391,
+        "lka_pooled": 0.32079640549025623
+      },
+      {
+        "record_id": "record42",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.047687645483584624,
+        "lka_pooled": -0.0818357433143415
+      },
+      {
+        "record_id": "record43",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.28986150174361036,
+        "lka_pooled": 0.2596119261189089
+      },
+      {
+        "record_id": "record44",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.5357385724674498,
+        "lka_pooled": 0.5314677940558183
+      },
+      {
+        "record_id": "record45",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.17361098527908322,
+        "lka_pooled": 0.1736109852790832
+      },
+      {
+        "record_id": "record46",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.538782000541687,
+        "lka_pooled": 0.538782000541687
+      },
+      {
+        "record_id": "record47",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3833565036517754,
+        "lka_pooled": 0.40467335234631546
+      },
+      {
+        "record_id": "record48",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.05971503468681973,
+        "lka_pooled": -0.04810438325236012
+      },
+      {
+        "record_id": "record49",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.232293426990509,
+        "lka_pooled": 0.232293426990509
+      },
+      {
+        "record_id": "record50",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.536082923412323,
+        "lka_pooled": 0.536082923412323
+      },
+      {
+        "record_id": "record51",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3133885860443115,
+        "lka_pooled": 0.3133885860443115
+      },
+      {
+        "record_id": "record52",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.5070959231541271,
+        "lka_pooled": 0.4944932402435102
+      },
+      {
+        "record_id": "record53",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.2775317430496216,
+        "lka_pooled": 0.2775317430496216
+      },
+      {
+        "record_id": "record54",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.579579920881616,
+        "lka_pooled": 0.539435818940401
+      },
+      {
+        "record_id": "record55",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.5573582649230957,
+        "lka_pooled": 0.5573582649230957
+      },
+      {
+        "record_id": "record56",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4168803095817566,
+        "lka_pooled": 0.4168803095817566
+      },
+      {
+        "record_id": "record57",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3601287956900068,
+        "lka_pooled": 0.3888082047700882
+      },
+      {
+        "record_id": "record58",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4254397364826708,
+        "lka_pooled": 0.40036851245242433
+      },
+      {
+        "record_id": "record59",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4504449685429022,
+        "lka_pooled": 0.37311938643455506
+      },
+      {
+        "record_id": "record60",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.5612536668777466,
+        "lka_pooled": 0.5612536668777466
+      },
+      {
+        "record_id": "record61",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.27824177339452905,
+        "lka_pooled": 0.2554601494606201
+      },
+      {
+        "record_id": "record62",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.17350488365107203,
+        "lka_pooled": 0.08108229642068301
+      },
+      {
+        "record_id": "record63",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.5552821147707986,
+        "lka_pooled": 0.4046550922260017
+      },
+      {
+        "record_id": "record64",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.023036658763885394,
+        "lka_pooled": 0.0230366587638854
+      },
+      {
+        "record_id": "record65",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3598619699478149,
+        "lka_pooled": 0.3598619699478149
+      },
+      {
+        "record_id": "record66",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.576366667943376,
+        "lka_pooled": 0.5069444020885733
+      },
+      {
+        "record_id": "record67",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4053189754486084,
+        "lka_pooled": 0.4053189754486084
+      },
+      {
+        "record_id": "record68",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.5214069140681687,
+        "lka_pooled": 0.5143505120904822
+      },
+      {
+        "record_id": "record69",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.5809252249503792,
+        "lka_pooled": 0.5735123334405897
+      },
+      {
+        "record_id": "record70",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4326033853318779,
+        "lka_pooled": 0.46177445295609926
+      },
+      {
+        "record_id": "record71",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4569542428566948,
+        "lka_pooled": 0.4641797934770584
+      },
+      {
+        "record_id": "record72",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.6813026838029675,
+        "lka_pooled": 0.65124000985213
+      },
+      {
+        "record_id": "record73",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4635775368674819,
+        "lka_pooled": 0.4547776259183884
+      },
+      {
+        "record_id": "record74",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4330611228942871,
+        "lka_pooled": 0.4330611228942871
+      },
+      {
+        "record_id": "record75",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.41007857477096066,
+        "lka_pooled": 0.3912168471720442
+      },
+      {
+        "record_id": "record76",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.20432058676016482,
+        "lka_pooled": 0.23159424442993967
+      },
+      {
+        "record_id": "record77",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.2743889093399048,
+        "lka_pooled": 0.2743889093399048
+      },
+      {
+        "record_id": "record78",
+        "n_frames": 13,
+        "label": 1,
+        "lka_mean": 0.5019072890281677,
+        "lka_pooled": 0.5019072890281677
+      },
+      {
+        "record_id": "record79",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.2692418098449707,
+        "lka_pooled": 0.2692418098449707
+      },
+      {
+        "record_id": "record80",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4294254779815674,
+        "lka_pooled": 0.4294254779815674
+      },
+      {
+        "record_id": "record81",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.5876337885856628,
+        "lka_pooled": 0.5876337885856628
+      },
+      {
+        "record_id": "record82",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.48000724630440744,
+        "lka_pooled": 0.46661782075377073
+      },
+      {
+        "record_id": "record83",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.09767692737068219,
+        "lka_pooled": 0.11985708147945463
+      },
+      {
+        "record_id": "record84",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4305571317672729,
+        "lka_pooled": 0.4305571317672729
+      },
+      {
+        "record_id": "record85",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.007199045782099888,
+        "lka_pooled": 0.044641559123992924
+      },
+      {
+        "record_id": "record86",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3036512009087867,
+        "lka_pooled": 0.2814245336353779
+      },
+      {
+        "record_id": "record87",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3306846248806318,
+        "lka_pooled": 0.32746089750528334
+      },
+      {
+        "record_id": "record88",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3761373451919782,
+        "lka_pooled": 0.3974071259247629
+      },
+      {
+        "record_id": "record89",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.43200666009651595,
+        "lka_pooled": 0.44235147444825423
+      },
+      {
+        "record_id": "record90",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3494657167366572,
+        "lka_pooled": 0.35015664000260205
+      },
+      {
+        "record_id": "record91",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.7381631731987,
+        "lka_pooled": 0.7381631731987
+      },
+      {
+        "record_id": "record92",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.1586320636919645,
+        "lka_pooled": -0.11382876576814561
+      },
+      {
+        "record_id": "record93",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.45527365044994583,
+        "lka_pooled": 0.32963689765623044
+      },
+      {
+        "record_id": "record94",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.08708626565552138,
+        "lka_pooled": 0.08778069774821418
+      },
+      {
+        "record_id": "record95",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.09881123347348071,
+        "lka_pooled": 0.09875261607923003
+      },
+      {
+        "record_id": "record96",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.1380299925804138,
+        "lka_pooled": 0.1380299925804138
+      },
+      {
+        "record_id": "record97",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.02067507750584124,
+        "lka_pooled": -0.017890158389743994
+      },
+      {
+        "record_id": "record98",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.19640062936459873,
+        "lka_pooled": 0.17783283876048195
+      },
+      {
+        "record_id": "record99",
+        "n_frames": 9,
+        "label": 0,
+        "lka_mean": 0.211610734462738,
+        "lka_pooled": 0.211610734462738
+      },
+      {
+        "record_id": "record100",
+        "n_frames": 0,
+        "label": null
+      },
+      {
+        "record_id": "record101",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.1373076747537362,
+        "lka_pooled": 0.09725658692811665
+      },
+      {
+        "record_id": "record102",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.09637040424700352,
+        "lka_pooled": 0.09905583922553993
+      },
+      {
+        "record_id": "record103",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.29531292045116425,
+        "lka_pooled": 0.29332071322202685
+      },
+      {
+        "record_id": "record104",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.061029576656829364,
+        "lka_pooled": 0.06834122632679183
+      },
+      {
+        "record_id": "record105",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.20562013700504508,
+        "lka_pooled": 0.19732461251607372
+      },
+      {
+        "record_id": "record106",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.1419071082732414,
+        "lka_pooled": -0.14538683841103
+      },
+      {
+        "record_id": "record107",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3667479044875565,
+        "lka_pooled": 0.2810657324289021
+      },
+      {
+        "record_id": "record108",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.15502613864732995,
+        "lka_pooled": 0.15984701470324866
+      },
+      {
+        "record_id": "record109",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.16552745144342532,
+        "lka_pooled": 0.2534927450198876
+      },
+      {
+        "record_id": "record110",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.2094469855668404,
+        "lka_pooled": 0.17350308593581704
+      },
+      {
+        "record_id": "record111",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.1687604774760632,
+        "lka_pooled": 0.11896083624826537
+      },
+      {
+        "record_id": "record112",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.43025463710228606,
+        "lka_pooled": 0.4369601947382877
+      },
+      {
+        "record_id": "record113",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3258015399816401,
+        "lka_pooled": 0.3224807953207116
+      },
+      {
+        "record_id": "record114",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.37297899130350903,
+        "lka_pooled": 0.3552934908866882
+      },
+      {
+        "record_id": "record115",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4114986796547713,
+        "lka_pooled": 0.401593990631409
+      },
+      {
+        "record_id": "record116",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.2708784942370158,
+        "lka_pooled": 0.2752639811038971
+      },
+      {
+        "record_id": "record117",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.4767834411124911,
+        "lka_pooled": 0.48991684496402743
+      },
+      {
+        "record_id": "record118",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.49769734752541334,
+        "lka_pooled": 0.4606877850294113
+      },
+      {
+        "record_id": "record119",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.1634182975083897,
+        "lka_pooled": -0.04372122555971145
+      },
+      {
+        "record_id": "record120",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.35775899202427575,
+        "lka_pooled": 0.36927068051730294
+      },
+      {
+        "record_id": "record121",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.2564842383461987,
+        "lka_pooled": 0.26857867205142977
+      },
+      {
+        "record_id": "record122",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.3251421058575313,
+        "lka_pooled": 0.31757304710149764
+      },
+      {
+        "record_id": "record123",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.1465761374869778,
+        "lka_pooled": -0.15913956726298611
+      },
+      {
+        "record_id": "record124",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.0669323873266041,
+        "lka_pooled": 0.015483138859272
+      },
+      {
+        "record_id": "record125",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.08939962251053685,
+        "lka_pooled": 0.22613748854735924
+      },
+      {
+        "record_id": "record126",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.02222446956804817,
+        "lka_pooled": -0.0201657352322026
+      },
+      {
+        "record_id": "record127",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.039131838426677924,
+        "lka_pooled": -0.029281518779120753
+      },
+      {
+        "record_id": "record128",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": -0.010309529831256168,
+        "lka_pooled": -0.011367535240509919
+      },
+      {
+        "record_id": "record129",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": -1.2646498232147434e-05,
+        "lka_pooled": 0.004423788575565104
+      },
+      {
+        "record_id": "record130",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.11286024916244886,
+        "lka_pooled": -0.15955077216813437
+      },
+      {
+        "record_id": "record131",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.0697099861711518,
+        "lka_pooled": 0.07060256826877591
+      },
+      {
+        "record_id": "record132",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.09072590075378259,
+        "lka_pooled": 0.08574821670850115
+      },
+      {
+        "record_id": "record133",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.19072238566851626,
+        "lka_pooled": 0.17337996482097012
+      },
+      {
+        "record_id": "record134",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.10122946941570399,
+        "lka_pooled": 0.10032752030774164
+      },
+      {
+        "record_id": "record135",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.4315733026398331,
+        "lka_pooled": 0.33800601887075526
+      },
+      {
+        "record_id": "record136",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.11205132969099266,
+        "lka_pooled": 0.11491557591491272
+      },
+      {
+        "record_id": "record137",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": -0.37771843561159185,
+        "lka_pooled": -0.4661702908362661
+      },
+      {
+        "record_id": "record138",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.05226385262596595,
+        "lka_pooled": 0.054033742878172086
+      },
+      {
+        "record_id": "record139",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.08456816543544879,
+        "lka_pooled": 0.10374781439178868
+      },
+      {
+        "record_id": "record140",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.06704902455534262,
+        "lka_pooled": 0.06170897138696576
+      },
+      {
+        "record_id": "record141",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.5933599017487695,
+        "lka_pooled": -0.5354823866015986
+      },
+      {
+        "record_id": "record142",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.0442113023514794,
+        "lka_pooled": 0.04081936284115435
+      },
+      {
+        "record_id": "record143",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.0951313070665543,
+        "lka_pooled": 0.09224817485839408
+      },
+      {
+        "record_id": "record144",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.17416756464194177,
+        "lka_pooled": 0.16515734328163995
+      },
+      {
+        "record_id": "record145",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.09423140813786478,
+        "lka_pooled": 0.09585358745173402
+      },
+      {
+        "record_id": "record146",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.18529838661092365,
+        "lka_pooled": 0.20495172896542707
+      },
+      {
+        "record_id": "record147",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.06833326795453014,
+        "lka_pooled": 0.08362017498296846
+      },
+      {
+        "record_id": "record148",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": -0.31025015692910585,
+        "lka_pooled": -0.249376782476902
+      },
+      {
+        "record_id": "record149",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.42950512191480383,
+        "lka_pooled": 0.4218782875412389
+      },
+      {
+        "record_id": "record150",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.051780160745184496,
+        "lka_pooled": -0.037029654070248205
+      },
+      {
+        "record_id": "record151",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.0847326545017279,
+        "lka_pooled": 0.1022543294413073
+      },
+      {
+        "record_id": "record152",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.07652214002698737,
+        "lka_pooled": 0.0810938552353117
+      },
+      {
+        "record_id": "record153",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.014823199004336075,
+        "lka_pooled": 0.016070022715462547
+      },
+      {
+        "record_id": "record154",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.19079330409956594,
+        "lka_pooled": 0.2808606755262927
+      },
+      {
+        "record_id": "record155",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.32272018699009825,
+        "lka_pooled": 0.3057327441165322
+      },
+      {
+        "record_id": "record156",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.14963631667734428,
+        "lka_pooled": 0.14550848822844656
+      },
+      {
+        "record_id": "record157",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.06936769811187052,
+        "lka_pooled": 0.06671879699355675
+      },
+      {
+        "record_id": "record158",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.13791972687373896,
+        "lka_pooled": -0.08353356612356086
+      },
+      {
+        "record_id": "record159",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.5501723269621531,
+        "lka_pooled": 0.45036524688726975
+      },
+      {
+        "record_id": "record160",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.030121101389644234,
+        "lka_pooled": 0.0234270609679975
+      },
+      {
+        "record_id": "record161",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.02388883874695851,
+        "lka_pooled": 0.0417433435862119
+      },
+      {
+        "record_id": "record162",
+        "n_frames": 15,
+        "label": 1,
+        "lka_mean": 0.42112997135387714,
+        "lka_pooled": 0.3908160908354653
+      },
+      {
+        "record_id": "record163",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.16398186863990155,
+        "lka_pooled": 0.20649640580206388
+      },
+      {
+        "record_id": "record164",
+        "n_frames": 13,
+        "label": 1,
+        "lka_mean": 0.4673926567685387,
+        "lka_pooled": 0.4043987222181426
+      },
+      {
+        "record_id": "record165",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": -0.43039416073333653,
+        "lka_pooled": -0.37236803396752005
+      },
+      {
+        "record_id": "record166",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.210619784401931,
+        "lka_pooled": 0.13012382033250605
+      },
+      {
+        "record_id": "record167",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.07463096765371469,
+        "lka_pooled": 0.09653712819019954
+      },
+      {
+        "record_id": "record168",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.05541539178444786,
+        "lka_pooled": 0.07542787061797245
+      },
+      {
+        "record_id": "record169",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.15624453582766745,
+        "lka_pooled": 0.14503422868879218
+      },
+      {
+        "record_id": "record170",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.1650747641591527,
+        "lka_pooled": 0.16212972804119713
+      },
+      {
+        "record_id": "record171",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.1637301755883731,
+        "lka_pooled": 0.15876772708321218
+      },
+      {
+        "record_id": "record172",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.1388511553156075,
+        "lka_pooled": 0.16337691074923466
+      },
+      {
+        "record_id": "record173",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.19299572752383057,
+        "lka_pooled": 0.2595701754155846
+      }
+    ],
+    "Test": [
+      {
+        "record_id": "record174",
+        "n_frames": 11,
+        "label": 0,
+        "lka_mean": 0.11435457536069292,
+        "lka_pooled": 0.07163114052866391
+      },
+      {
+        "record_id": "record175",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.15489573787301547,
+        "lka_pooled": 0.14223964915301535
+      },
+      {
+        "record_id": "record176",
+        "n_frames": 9,
+        "label": 0,
+        "lka_mean": -0.01934433540665747,
+        "lka_pooled": -0.01802803567477636
+      },
+      {
+        "record_id": "record177",
+        "n_frames": 0,
+        "label": null
+      },
+      {
+        "record_id": "record178",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.24430895813535927,
+        "lka_pooled": 0.38870827682889425
+      },
+      {
+        "record_id": "record179",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.17728533272761113,
+        "lka_pooled": 0.180434090534846
+      },
+      {
+        "record_id": "record180",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.05951022441457259,
+        "lka_pooled": 0.06390354953314126
+      },
+      {
+        "record_id": "record181",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.10298741840737319,
+        "lka_pooled": 0.10149679243564602
+      },
+      {
+        "record_id": "record182",
+        "n_frames": 8,
+        "label": 0,
+        "lka_mean": 0.18683509481293012,
+        "lka_pooled": 0.14542530688858982
+      },
+      {
+        "record_id": "record183",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.20992090468145483,
+        "lka_pooled": 0.18846384674310684
+      },
+      {
+        "record_id": "record184",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.02288659171675842,
+        "lka_pooled": 0.020866300331221655
+      },
+      {
+        "record_id": "record185",
+        "n_frames": 13,
+        "label": 1,
+        "lka_mean": 0.36716798117975397,
+        "lka_pooled": 0.37272800503507436
+      },
+      {
+        "record_id": "record186",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.13348417132328716,
+        "lka_pooled": 0.11596134199036492
+      },
+      {
+        "record_id": "record187",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.011463328137969067,
+        "lka_pooled": -0.012086440776956508
+      },
+      {
+        "record_id": "record188",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.12989641955793765,
+        "lka_pooled": 0.14323635164060092
+      },
+      {
+        "record_id": "record189",
+        "n_frames": 7,
+        "label": 0,
+        "lka_mean": 0.21529543232350123,
+        "lka_pooled": 0.21869221530854702
+      },
+      {
+        "record_id": "record190",
+        "n_frames": 6,
+        "label": 0,
+        "lka_mean": 0.1541100740432739,
+        "lka_pooled": 0.1541100740432739
+      },
+      {
+        "record_id": "record191",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": -0.25499368145021706,
+        "lka_pooled": -0.21943546503436828
+      },
+      {
+        "record_id": "record192",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": -0.21843769020722045,
+        "lka_pooled": -0.21740554809570312
+      },
+      {
+        "record_id": "record193",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": -0.04497474754995863,
+        "lka_pooled": -0.07557497527864246
+      },
+      {
+        "record_id": "record194",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": -0.08383955832322434,
+        "lka_pooled": -0.09551412620042497
+      },
+      {
+        "record_id": "record195",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.0250740647315979,
+        "lka_pooled": 0.0250740647315979
+      },
+      {
+        "record_id": "record196",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.1991636753082275,
+        "lka_pooled": 0.1991636753082275
+      },
+      {
+        "record_id": "record197",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.1991636753082275,
+        "lka_pooled": 0.1991636753082275
+      },
+      {
+        "record_id": "record198",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.20959821470971374,
+        "lka_pooled": 0.20505362293299506
+      },
+      {
+        "record_id": "record199",
+        "n_frames": 9,
+        "label": 1,
+        "lka_mean": 0.2918927984641237,
+        "lka_pooled": 0.25359045561622173
+      },
+      {
+        "record_id": "record200",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.1590062039787464,
+        "lka_pooled": 0.1779911345243454
+      },
+      {
+        "record_id": "record201",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.03239972827109421,
+        "lka_pooled": 0.06078794327649199
+      },
+      {
+        "record_id": "record202",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.16432130336761472,
+        "lka_pooled": 0.1643213033676147
+      },
+      {
+        "record_id": "record203",
+        "n_frames": 15,
+        "label": 0,
+        "lka_mean": 0.16432130336761472,
+        "lka_pooled": 0.1643213033676147
+      },
+      {
+        "record_id": "record204",
+        "n_frames": 13,
+        "label": 1,
+        "lka_mean": 0.2963284676968011,
+        "lka_pooled": 0.2910403115498392
+      },
+      {
+        "record_id": "record205",
+        "n_frames": 13,
+        "label": 1,
+        "lka_mean": 0.4308020090751159,
+        "lka_pooled": 0.4258227982019123
+      },
+      {
+        "record_id": "record206",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.08339191664875403,
+        "lka_pooled": 0.08793460268597711
+      },
+      {
+        "record_id": "record207",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.3446907047102257,
+        "lka_pooled": 0.34371200188919526
+      },
+      {
+        "record_id": "record208",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.2616766542905853,
+        "lka_pooled": 0.2588555774563237
+      },
+      {
+        "record_id": "record209",
+        "n_frames": 14,
+        "label": 1,
+        "lka_mean": 0.41846472728820067,
+        "lka_pooled": 0.41476702840704666
+      },
+      {
+        "record_id": "record210",
+        "n_frames": 10,
+        "label": 0,
+        "lka_mean": 0.0500979626815097,
+        "lka_pooled": 0.04690481459123926
+      },
+      {
+        "record_id": "record211",
+        "n_frames": 14,
+        "label": 0,
+        "lka_mean": 0.194484535124539,
+        "lka_pooled": 0.1837878247938658
+      },
+      {
+        "record_id": "record213",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": -0.007151974997947426,
+        "lka_pooled": -0.01142337990555374
+      },
+      {
+        "record_id": "record214",
+        "n_frames": 13,
+        "label": 0,
+        "lka_mean": 0.010770620513600076,
+        "lka_pooled": 0.015385718080732545
+      },
+      {
+        "record_id": "record215",
+        "n_frames": 12,
+        "label": 0,
+        "lka_mean": 0.17378794499808203,
+        "lka_pooled": 0.1296193004355711
+      }
+    ]
+  },
+  "build_seconds": 148.4,
+  "versions": {
+    "pandas": "3.0.6",
+    "numpy": "2.4.6"
+  }
+}

@@ -4,3 +4,6 @@ Stage_2_Submission/*
 
 # Ignore large datasets
 TESLA_AP3_MODEL3_v1/*
+
+# Ignore temporary files
+src/__pycache__/
