@@ -1,0 +1,6 @@
+# Ignore reports
+Stage_1_Proposal/*
+Stage_2_Submission/*
+
+# Ignore large datasets
+TESLA_AP3_MODEL3_v1/*
